@@ -1,0 +1,798 @@
+/* ========================================
+   SOBRE - SPECIFIC STYLES
+   ======================================== */
+
+/* ========================================
+   1. HERO SECTION
+   ======================================== */
+
+.sobre-hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0d3742 50%, #1A5A6E 100%);
+    overflow: hidden;
+}
+
+.sobre-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+.sobre-hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(255, 107, 53, 0.12) 0%, transparent 50%);
+}
+
+.sobre-hero__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 3rem 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.sobre-hero__title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.sobre-hero__subtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    line-height: 1.6;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+/* ========================================
+   2. HISTÓRIA
+   ======================================== */
+
+.historia {
+    padding: 6rem 0;
+}
+
+.historia__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.historia__text {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: var(--color-text);
+}
+
+.historia__image {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+}
+
+.historia__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ========================================
+   3. TIMELINE
+   ======================================== */
+
+.timeline {
+    padding: 6rem 0;
+}
+
+.timeline-wrapper {
+    max-width: 1000px;
+    margin: 4rem auto 0;
+    position: relative;
+}
+
+.timeline-wrapper::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row;
+    text-align: right;
+}
+
+.timeline-item:nth-child(odd) .timeline-item__year {
+    order: 2;
+}
+
+.timeline-item:nth-child(odd) .timeline-item__content {
+    order: 1;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+    text-align: left;
+}
+
+.timeline-item:nth-child(even) .timeline-item__year {
+    order: 2;
+}
+
+.timeline-item:nth-child(even) .timeline-item__content {
+    order: 1;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline-item:nth-child(3) { animation-delay: 0.3s; }
+.timeline-item:nth-child(4) { animation-delay: 0.4s; }
+.timeline-item:nth-child(5) { animation-delay: 0.5s; }
+.timeline-item:nth-child(6) { animation-delay: 0.6s; }
+.timeline-item:nth-child(7) { animation-delay: 0.7s; }
+
+.timeline-item__year {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    background: var(--color-secondary);
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-item__content {
+    flex: 1;
+    max-width: 400px;
+    padding-top: 2rem;
+}
+
+.timeline-item__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}
+
+.timeline-item__text {
+    color: var(--color-text-light);
+    line-height: 1.7;
+}
+
+/* ========================================
+   4. MVV (MISSÃO, VISÃO, VALORES)
+   ======================================== */
+
+.mvv {
+    padding: 6rem 0;
+}
+
+.mvv__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.mvv-card {
+    background: var(--color-white);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all var(--transition-normal);
+}
+
+.mvv-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.mvv-card--wide {
+    grid-column: span 2;
+}
+
+.mvv-card__icon {
+    color: var(--color-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.mvv-card__title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 1.25rem;
+}
+
+.mvv-card__text {
+    color: var(--color-text-light);
+    line-height: 1.8;
+}
+
+.mvv-card__list {
+    list-style: none;
+    padding: 0;
+}
+
+.mvv-card__list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-light);
+}
+
+.mvv-card__list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary);
+    font-weight: 700;
+}
+
+.mvv-card__list strong {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* ========================================
+   5. EQUIPE
+   ======================================== */
+
+.equipe {
+    padding: 6rem 0;
+}
+
+.equipe__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+
+.membro-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all var(--transition-normal);
+}
+
+.membro-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.membro-card__image {
+    position: relative;
+    padding-bottom: 100%; /* 1:1 aspect ratio */
+    overflow: hidden;
+    background: var(--color-bg-light);
+}
+
+.membro-card__image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.membro-card:hover .membro-card__image img {
+    transform: scale(1.05);
+}
+
+.membro-card__content {
+    padding: 2rem;
+}
+
+.membro-card__nome {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.membro-card__cargo {
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.membro-card__bio {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+.equipe__cta {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 2rem;
+    background: var(--color-bg-light);
+    border-radius: var(--radius-lg);
+}
+
+.equipe__cta p {
+    color: var(--color-text);
+    font-size: 1.125rem;
+    line-height: 1.7;
+}
+
+/* ========================================
+   6. CERTIFICAÇÕES
+   ======================================== */
+
+.certificacoes {
+    padding: 6rem 0;
+}
+
+.certificacoes__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.cert-card {
+    text-align: center;
+    padding: 2rem;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all var(--transition-normal);
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.cert-card__badge {
+    height: 100px;
+    width: auto;
+    margin-bottom: 1.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cert-card__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}
+
+.cert-card__text {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+/* ========================================
+   7. COMPROMISSOS
+   ======================================== */
+
+.compromissos {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0d3742 100%);
+    padding: 6rem 0;
+}
+
+.compromissos__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.compromisso-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all var(--transition-normal);
+}
+
+.compromisso-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+.compromisso-card__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 1rem;
+}
+
+.compromisso-card__text {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+}
+
+/* ========================================
+   8. NÚMEROS
+   ======================================== */
+
+.numeros {
+    padding: 6rem 0;
+    background: var(--color-bg-light);
+}
+
+.numeros__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.numero-card {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all var(--transition-normal);
+}
+
+.numero-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.numero-card__value {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.numero-card__suffix {
+    font-size: 2rem;
+    color: var(--color-secondary);
+    font-weight: 700;
+}
+
+.numero-card__label {
+    display: block;
+    font-size: 1rem;
+    color: var(--color-text);
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+/* ========================================
+   9. CTA SOBRE
+   ======================================== */
+
+.cta-sobre {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0d3742 100%);
+    padding: 5rem 0;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.btn--outline-white {
+    background: transparent;
+    border: 2px solid var(--color-white);
+    color: var(--color-white);
+}
+
+.btn--outline-white:hover {
+    background: var(--color-white);
+    color: var(--color-primary);
+}
+
+/* ========================================
+   10. RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablets (até 1024px) */
+@media (max-width: 1024px) {
+    .sobre-hero__title {
+        font-size: 2.5rem;
+    }
+
+    .sobre-hero__subtitle {
+        font-size: 1.25rem;
+    }
+
+    .historia__grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .timeline-wrapper::before {
+        left: 60px;
+    }
+
+    .timeline-item {
+        flex-direction: row !important;
+        text-align: left !important;
+    }
+
+    .timeline-item__year {
+        order: 1 !important;
+        width: 100px;
+        height: 100px;
+        font-size: 1.5rem;
+    }
+
+    .timeline-item__content {
+        order: 2 !important;
+        max-width: none;
+    }
+
+    .mvv__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mvv-card--wide {
+        grid-column: span 1;
+    }
+
+    .equipe__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile (até 768px) */
+@media (max-width: 768px) {
+    .sobre-hero {
+        min-height: 50vh;
+    }
+
+    .sobre-hero__title {
+        font-size: 2rem;
+    }
+
+    .sobre-hero__subtitle {
+        font-size: 1.125rem;
+    }
+
+    .historia,
+    .timeline,
+    .mvv,
+    .equipe,
+    .certificacoes,
+    .compromissos,
+    .numeros {
+        padding: 4rem 0;
+    }
+
+    .timeline-wrapper::before {
+        left: 40px;
+    }
+
+    .timeline-item {
+        gap: 1.5rem;
+    }
+
+    .timeline-item__year {
+        width: 80px;
+        height: 80px;
+        font-size: 1.25rem;
+    }
+
+    .equipe__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certificacoes__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .compromissos__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .numeros__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+    }
+}
+
+/* Small mobile (até 480px) */
+@media (max-width: 480px) {
+    .sobre-hero__title {
+        font-size: 1.5rem;
+    }
+
+    .sobre-hero__subtitle {
+        font-size: 1rem;
+    }
+
+    .timeline-wrapper::before {
+        left: 30px;
+    }
+
+    .timeline-item__year {
+        width: 60px;
+        height: 60px;
+        font-size: 1rem;
+    }
+
+    .timeline-item__title {
+        font-size: 1.25rem;
+    }
+
+    .mvv-card,
+    .membro-card__content,
+    .compromisso-card {
+        padding: 1.5rem;
+    }
+
+    .mvv-card__title {
+        font-size: 1.375rem;
+    }
+
+    .certificacoes__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .numero-card__value {
+        font-size: 2.5rem;
+    }
+
+    .numeros__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   11. ANIMATIONS
+   ======================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   12. PRINT STYLES
+   ======================================== */
+
+@media print {
+    .sobre-hero {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+
+    .timeline-wrapper::before {
+        display: none;
+    }
+
+    .timeline-item {
+        break-inside: avoid;
+        margin-bottom: 2rem;
+    }
+
+    .timeline-item__year {
+        box-shadow: none;
+        border: 2px solid var(--color-secondary);
+    }
+
+    .membro-card,
+    .cert-card,
+    .compromisso-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid var(--color-border);
+    }
+
+    .whatsapp-float {
+        display: none;
+    }
+}
+
+/* ========================================
+   13. ACCESSIBILITY
+   ======================================== */
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .timeline-item,
+    .membro-card img,
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .timeline-item {
+        opacity: 1;
+    }
+
+    .membro-card:hover,
+    .cert-card:hover,
+    .numero-card:hover {
+        transform: none;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .mvv-card,
+    .membro-card,
+    .cert-card,
+    .numero-card {
+        border: 2px solid var(--color-primary);
+    }
+
+    .timeline-item__year {
+        border: 3px solid var(--color-white);
+    }
+
+    .compromisso-card {
+        border-width: 2px;
+    }
+}

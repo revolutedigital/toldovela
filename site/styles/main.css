@@ -1,0 +1,653 @@
+/* ========================================
+   TOLDO VELA - MAIN STYLESHEET
+   Versão: 1.0
+   ======================================== */
+
+/* ========================================
+   1. CSS RESET & BASE
+   ======================================== */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Cores Primárias */
+    --color-primary: #1A4D5C; /* Azul Petróleo */
+    --color-primary-dark: #143B47;
+    --color-primary-light: #2A6D7C;
+
+    --color-secondary: #FF6B35; /* Laranja Vibrante */
+    --color-secondary-dark: #E55A2B;
+    --color-secondary-light: #FF7F51;
+
+    /* Cores Neutras */
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-gray-dark: #2C2C2C;
+    --color-gray: #666666;
+    --color-gray-light: #CCCCCC;
+    --color-gray-bg: #F5F5F5;
+
+    /* Cor Sustentável */
+    --color-green: #4CAF50;
+
+    /* Tipografia */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+
+    /* Tamanhos de Fonte */
+    --font-size-xs: 0.75rem;    /* 12px */
+    --font-size-sm: 0.875rem;   /* 14px */
+    --font-size-base: 1rem;      /* 16px */
+    --font-size-lg: 1.125rem;    /* 18px */
+    --font-size-xl: 1.25rem;     /* 20px */
+    --font-size-2xl: 1.5rem;     /* 24px */
+    --font-size-3xl: 1.875rem;   /* 30px */
+    --font-size-4xl: 2.25rem;    /* 36px */
+    --font-size-5xl: 3rem;       /* 48px */
+    --font-size-6xl: 3.75rem;    /* 60px */
+
+    /* Espaçamentos */
+    --spacing-xs: 0.5rem;   /* 8px */
+    --spacing-sm: 1rem;     /* 16px */
+    --spacing-md: 1.5rem;   /* 24px */
+    --spacing-lg: 2rem;     /* 32px */
+    --spacing-xl: 3rem;     /* 48px */
+    --spacing-2xl: 4rem;    /* 64px */
+    --spacing-3xl: 6rem;    /* 96px */
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+    --shadow-xl: 0 20px 25px rgba(0,0,0,0.15);
+
+    /* Transitions */
+    --transition-fast: 150ms ease-in-out;
+    --transition-normal: 300ms ease-in-out;
+    --transition-slow: 500ms ease-in-out;
+
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+
+    /* Container */
+    --container-max-width: 1200px;
+    --container-padding: 1rem;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--color-gray-dark);
+    background-color: var(--color-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   2. TYPOGRAPHY
+   ======================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-gray-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: var(--font-size-5xl); }
+h2 { font-size: var(--font-size-4xl); }
+h3 { font-size: var(--font-size-3xl); }
+h4 { font-size: var(--font-size-2xl); }
+h5 { font-size: var(--font-size-xl); }
+h6 { font-size: var(--font-size-lg); }
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+a:hover {
+    color: var(--color-secondary);
+}
+
+/* ========================================
+   3. LAYOUT
+   ======================================== */
+
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.section {
+    padding: var(--spacing-3xl) 0;
+}
+
+.section--dark {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.section--dark h1,
+.section--dark h2,
+.section--dark h3,
+.section--dark h4,
+.section--dark h5,
+.section--dark h6 {
+    color: var(--color-white);
+}
+
+.section--gray {
+    background-color: var(--color-gray-bg);
+}
+
+.section--gradient {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-black) 100%);
+    color: var(--color-white);
+}
+
+.section__title {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.section__cta {
+    margin-top: var(--spacing-xl);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ========================================
+   4. BUTTONS
+   ======================================== */
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    font-family: var(--font-heading);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    text-decoration: none;
+}
+
+.btn--primary {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+.btn--primary:hover {
+    background-color: var(--color-secondary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn--secondary {
+    background-color: transparent;
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+}
+
+.btn--secondary:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+}
+
+.btn--outline {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.btn--outline:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn--large {
+    padding: 1rem 2.5rem;
+    font-size: var(--font-size-lg);
+}
+
+.btn--full {
+    width: 100%;
+}
+
+/* ========================================
+   5. HEADER
+   ======================================== */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+}
+
+.header__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.header__logo img {
+    height: 50px;
+    width: auto;
+}
+
+.header__nav {
+    display: flex;
+}
+
+.nav__menu {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-lg);
+}
+
+.nav__item a {
+    color: var(--color-gray-dark);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color var(--transition-normal);
+}
+
+.nav__item a:hover {
+    color: var(--color-secondary);
+}
+
+.nav__item.dropdown {
+    position: relative;
+}
+
+.dropdown__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 250px;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-xl);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all var(--transition-normal);
+}
+
+.nav__item.dropdown:hover .dropdown__menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown__menu li {
+    margin: 0;
+}
+
+.dropdown__menu a {
+    display: block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    color: var(--color-gray-dark);
+    font-size: var(--font-size-sm);
+    text-transform: none;
+    transition: background-color var(--transition-fast);
+}
+
+.dropdown__menu a:hover {
+    background-color: var(--color-gray-bg);
+    color: var(--color-secondary);
+}
+
+.header__contact {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.header__phone {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.header__menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.header__menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-primary);
+    transition: all var(--transition-normal);
+}
+
+/* ========================================
+   6. FORMS
+   ======================================== */
+
+.form-row {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+    color: var(--color-white);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    border: 1px solid var(--color-gray-light);
+    border-radius: var(--radius-md);
+    background-color: var(--color-white);
+    color: var(--color-gray-dark);
+    transition: border-color var(--transition-normal);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.form-privacy {
+    text-align: center;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-light);
+    margin-top: var(--spacing-md);
+}
+
+/* ========================================
+   7. FOOTER
+   ======================================== */
+
+.footer {
+    background-color: var(--color-gray-dark);
+    color: var(--color-white);
+    padding: var(--spacing-3xl) 0 var(--spacing-lg);
+}
+
+.footer__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.footer__logo img {
+    height: 40px;
+    margin-bottom: var(--spacing-md);
+}
+
+.footer__text {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.footer__title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-white);
+}
+
+.footer__links {
+    list-style: none;
+}
+
+.footer__links li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer__links a {
+    color: var(--color-gray-light);
+    font-size: var(--font-size-sm);
+    transition: color var(--transition-normal);
+}
+
+.footer__links a:hover {
+    color: var(--color-secondary);
+}
+
+.footer__contact {
+    list-style: none;
+}
+
+.footer__contact li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+}
+
+.footer__contact svg {
+    flex-shrink: 0;
+    opacity: 0.7;
+}
+
+.footer__social {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.footer__social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: var(--radius-full);
+    color: var(--color-white);
+    transition: all var(--transition-normal);
+}
+
+.footer__social a:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-3px);
+}
+
+.footer__certifications {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.footer__certifications img {
+    height: 40px;
+    opacity: 0.7;
+}
+
+.footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-light);
+}
+
+.footer__legal {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.footer__legal a {
+    color: var(--color-gray-light);
+}
+
+.footer__legal a:hover {
+    color: var(--color-white);
+}
+
+/* ========================================
+   8. WHATSAPP FLOAT
+   ======================================== */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-xl);
+    z-index: 999;
+    transition: all var(--transition-normal);
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+}
+
+/* ========================================
+   9. UTILITIES
+   ======================================== */
+
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mt-xl { margin-top: var(--spacing-xl); }
+
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-xl { margin-bottom: var(--spacing-xl); }
+
+.pt-sm { padding-top: var(--spacing-sm); }
+.pt-md { padding-top: var(--spacing-md); }
+.pt-lg { padding-top: var(--spacing-lg); }
+.pt-xl { padding-top: var(--spacing-xl); }
+
+.pb-sm { padding-bottom: var(--spacing-sm); }
+.pb-md { padding-bottom: var(--spacing-md); }
+.pb-lg { padding-bottom: var(--spacing-lg); }
+.pb-xl { padding-bottom: var(--spacing-xl); }
+
+/* ========================================
+   10. RESPONSIVE
+   ======================================== */
+
+@media (max-width: 1024px) {
+    :root {
+        --font-size-5xl: 2.5rem;
+        --font-size-4xl: 2rem;
+        --font-size-3xl: 1.625rem;
+    }
+
+    .footer__content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --font-size-5xl: 2rem;
+        --font-size-4xl: 1.75rem;
+        --font-size-3xl: 1.5rem;
+        --spacing-3xl: 4rem;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .header__menu-toggle {
+        display: flex;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .footer__content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .footer__bottom {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --container-padding: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

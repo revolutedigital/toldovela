@@ -1,0 +1,800 @@
+/* ========================================
+   MATERIAIS & TECNOLOGIA - SPECIFIC STYLES
+   ======================================== */
+
+/* ========================================
+   1. HERO SECTION
+   ======================================== */
+
+.materiais-hero {
+    position: relative;
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0d3742 0%, var(--color-primary) 50%, #1A5A6E 100%);
+    overflow: hidden;
+}
+
+.materiais-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/assets/images/patterns/hexagon-pattern.svg');
+    background-size: 60px 60px;
+    opacity: 0.05;
+    animation: patternSlide 30s linear infinite;
+}
+
+@keyframes patternSlide {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 60px 60px;
+    }
+}
+
+.materiais-hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(255, 107, 53, 0.15) 0%, transparent 60%);
+}
+
+.materiais-hero__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.materiais-hero__title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.materiais-hero__subtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 3rem;
+    font-weight: 300;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+.materiais-hero__brands {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+.materiais-hero__brands img {
+    height: 60px;
+    width: auto;
+    opacity: 0.9;
+    transition: all var(--transition-normal);
+    filter: brightness(0) invert(1);
+}
+
+.materiais-hero__brands img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* ========================================
+   2. INTRODUÇÃO
+   ======================================== */
+
+.materiais-intro {
+    padding: 5rem 0;
+}
+
+.materiais-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.benefit-card {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all var(--transition-normal);
+    border-top: 4px solid transparent;
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    border-top-color: var(--color-secondary);
+}
+
+.benefit-card__icon {
+    color: var(--color-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.benefit-card__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.benefit-card__text {
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+/* ========================================
+   3. MATERIAL DETAIL SECTIONS
+   ======================================== */
+
+.material-detail {
+    padding: 6rem 0;
+}
+
+.material-detail__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+}
+
+.material-detail__grid--reverse {
+    direction: rtl;
+}
+
+.material-detail__grid--reverse > * {
+    direction: ltr;
+}
+
+.material-detail__media {
+    position: relative;
+}
+
+.material-detail__image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.material-detail__logo {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-white);
+    padding: 1.5rem 2.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.material-detail__logo img {
+    height: 50px;
+    width: auto;
+}
+
+.material-detail__content {
+    position: sticky;
+    top: 100px;
+}
+
+.material-detail__badge {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-white);
+    background: var(--color-primary);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1rem;
+}
+
+.material-detail__badge--premium {
+    background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+    color: #000;
+}
+
+.material-detail__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.section--dark .material-detail__title {
+    color: var(--color-white);
+}
+
+.material-detail__subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.section--dark .material-detail__subtitle {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.material-detail__text {
+    color: var(--color-text);
+}
+
+.section--dark .material-detail__text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.material-detail__text h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 2rem 0 1rem;
+}
+
+.section--dark .material-detail__text h3 {
+    color: var(--color-secondary);
+}
+
+.material-detail__text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.material-detail__specs {
+    list-style: none;
+    padding: 1.5rem;
+    background: rgba(26, 77, 92, 0.05);
+    border-radius: var(--radius-md);
+    margin: 1.5rem 0;
+}
+
+.section--dark .material-detail__specs {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.material-detail__specs li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(26, 77, 92, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.section--dark .material-detail__specs li {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.material-detail__specs li:last-child {
+    border-bottom: none;
+}
+
+.material-detail__specs strong {
+    color: var(--color-primary);
+    font-weight: 600;
+    flex: 0 0 40%;
+}
+
+.section--dark .material-detail__specs strong {
+    color: var(--color-white);
+}
+
+.material-detail__list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.material-detail__list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+}
+
+.material-detail__list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary);
+    font-weight: 700;
+}
+
+.material-detail__colors {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+    flex-wrap: wrap;
+}
+
+.color-sample {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid var(--color-white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.color-sample:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.color-sample:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-dark);
+    color: var(--color-white);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* ========================================
+   4. COMPARATIVO DE MATERIAIS
+   ======================================== */
+
+.comparativo {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0d3742 100%);
+    padding: 5rem 0;
+}
+
+.comparison-table-wrapper {
+    overflow-x: auto;
+    margin: 3rem 0;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.comparison-table {
+    width: 100%;
+    background: var(--color-white);
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.comparison-table thead {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1A5A6E 100%);
+}
+
+.comparison-table th {
+    padding: 1.5rem 1rem;
+    text-align: left;
+    color: var(--color-white);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+}
+
+.comparison-table th:first-child {
+    border-top-left-radius: var(--radius-lg);
+}
+
+.comparison-table th:last-child {
+    border-top-right-radius: var(--radius-lg);
+}
+
+.comparison-table th small {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 400;
+    margin-top: 0.25rem;
+    opacity: 0.8;
+}
+
+.comparison-table tbody tr {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.comparison-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.comparison-table tbody tr:hover {
+    background: var(--color-bg-light);
+}
+
+.comparison-table td {
+    padding: 1.25rem 1rem;
+    color: var(--color-text);
+}
+
+.comparison-table td:first-child {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.comparison-note {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(10px);
+}
+
+/* ========================================
+   5. CERTIFICAÇÕES
+   ======================================== */
+
+.certificacoes {
+    padding: 5rem 0;
+}
+
+.certificacoes__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.certificacao-card {
+    text-align: center;
+    padding: 2rem;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all var(--transition-normal);
+}
+
+.certificacao-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.certificacao-card__icon {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.certificacao-card__icon img {
+    max-height: 100%;
+    width: auto;
+}
+
+.certificacao-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}
+
+.certificacao-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+/* ========================================
+   6. FORMULÁRIO AMOSTRAS
+   ======================================== */
+
+.form-amostras {
+    padding: 5rem 0;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: var(--color-white);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.checkbox-group label:hover {
+    border-color: var(--color-secondary);
+    background: rgba(255, 107, 53, 0.05);
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"]:checked + span {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* ========================================
+   7. RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablets (até 1024px) */
+@media (max-width: 1024px) {
+    .materiais-hero__title {
+        font-size: 2.5rem;
+    }
+
+    .materiais-hero__subtitle {
+        font-size: 1.25rem;
+    }
+
+    .materiais-hero__brands {
+        gap: 2rem;
+    }
+
+    .materiais-hero__brands img {
+        height: 50px;
+    }
+
+    .material-detail__grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .material-detail__grid--reverse {
+        direction: ltr;
+    }
+
+    .material-detail__content {
+        position: static;
+    }
+
+    .material-detail__title {
+        font-size: 2rem;
+    }
+
+    .materiais-benefits {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile (até 768px) */
+@media (max-width: 768px) {
+    .materiais-hero {
+        min-height: 50vh;
+    }
+
+    .materiais-hero__title {
+        font-size: 2rem;
+    }
+
+    .materiais-hero__subtitle {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+    }
+
+    .materiais-hero__brands {
+        gap: 1.5rem;
+    }
+
+    .materiais-hero__brands img {
+        height: 40px;
+    }
+
+    .materiais-benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .material-detail {
+        padding: 4rem 0;
+    }
+
+    .material-detail__title {
+        font-size: 1.75rem;
+    }
+
+    .material-detail__subtitle {
+        font-size: 1.125rem;
+    }
+
+    .material-detail__logo {
+        position: static;
+        transform: none;
+        margin-top: 2rem;
+    }
+
+    .material-detail__specs li {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .material-detail__specs strong {
+        flex: none;
+    }
+
+    .comparison-table-wrapper {
+        margin: 2rem -1rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 1rem 0.75rem;
+        font-size: 0.875rem;
+    }
+
+    .certificacoes__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Small mobile (até 480px) */
+@media (max-width: 480px) {
+    .materiais-hero__title {
+        font-size: 1.5rem;
+    }
+
+    .materiais-hero__subtitle {
+        font-size: 1rem;
+    }
+
+    .material-detail__badge {
+        font-size: 0.75rem;
+        padding: 0.375rem 0.75rem;
+    }
+
+    .material-detail__title {
+        font-size: 1.5rem;
+    }
+
+    .material-detail__colors {
+        gap: 0.75rem;
+    }
+
+    .color-sample {
+        width: 40px;
+        height: 40px;
+    }
+
+    .comparison-table {
+        min-width: 600px;
+    }
+}
+
+/* ========================================
+   8. ANIMATIONS
+   ======================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll reveal animation */
+.material-detail {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.material-detail:nth-child(odd) {
+    animation-delay: 0.1s;
+}
+
+.material-detail:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+/* ========================================
+   9. PRINT STYLES
+   ======================================== */
+
+@media print {
+    .materiais-hero {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+
+    .material-detail__grid {
+        grid-template-columns: 1fr;
+        page-break-inside: avoid;
+    }
+
+    .comparison-table-wrapper {
+        box-shadow: none;
+    }
+
+    .whatsapp-float,
+    .scroll-to-top {
+        display: none;
+    }
+}
+
+/* ========================================
+   10. ACCESSIBILITY
+   ======================================== */
+
+/* Focus styles */
+.color-sample:focus {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+.checkbox-group input[type="checkbox"]:focus {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .materiais-hero::before {
+        animation: none;
+    }
+
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .benefit-card,
+    .certificacao-card {
+        border: 2px solid var(--color-primary);
+    }
+
+    .comparison-table tbody tr {
+        border-bottom-width: 2px;
+    }
+
+    .color-sample {
+        border-width: 4px;
+    }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+    .comparison-table {
+        background: #1a1a1a;
+    }
+
+    .comparison-table td {
+        color: #e0e0e0;
+    }
+
+    .comparison-table tbody tr:hover {
+        background: #2a2a2a;
+    }
+}

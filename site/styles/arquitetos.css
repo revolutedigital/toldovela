@@ -1,0 +1,797 @@
+/* ========================================
+   PARA ARQUITETOS - SPECIFIC STYLES
+   ======================================== */
+
+/* ========================================
+   1. HERO SECTION
+   ======================================== */
+
+.arquitetos-hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0d3742 0%, var(--color-primary) 40%, #1A5A6E 100%);
+    overflow: hidden;
+}
+
+.arquitetos-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        linear-gradient(30deg, transparent 12%, rgba(255,255,255,.03) 12%, rgba(255,255,255,.03) 13%, transparent 13%),
+        linear-gradient(60deg, transparent 12%, rgba(255,255,255,.03) 12%, rgba(255,255,255,.03) 13%, transparent 13%);
+    background-size: 20px 35px;
+}
+
+.arquitetos-hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.15) 0%, transparent 50%);
+}
+
+.arquitetos-hero__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 4rem 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.arquitetos-hero__badge {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-secondary);
+    background: rgba(255, 107, 53, 0.15);
+    padding: 0.5rem 1.5rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.arquitetos-hero__title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+.arquitetos-hero__subtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 3rem;
+    font-weight: 300;
+    line-height: 1.5;
+    animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+.arquitetos-hero__cta {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease-out 0.6s backwards;
+}
+
+.btn--outline-white {
+    background: transparent;
+    border: 2px solid var(--color-white);
+    color: var(--color-white);
+}
+
+.btn--outline-white:hover {
+    background: var(--color-white);
+    color: var(--color-primary);
+}
+
+/* ========================================
+   2. BENEFÍCIOS
+   ======================================== */
+
+.beneficios {
+    padding: 6rem 0;
+}
+
+.beneficios__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+
+.beneficio-card {
+    padding: 2.5rem;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all var(--transition-normal);
+    border-top: 4px solid transparent;
+}
+
+.beneficio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    border-top-color: var(--color-secondary);
+}
+
+.beneficio-card__icon {
+    color: var(--color-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.beneficio-card__title {
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.beneficio-card__text {
+    color: var(--color-text-light);
+    line-height: 1.7;
+}
+
+/* ========================================
+   3. PROCESSO
+   ======================================== */
+
+.processo {
+    padding: 6rem 0;
+}
+
+.processo-timeline {
+    max-width: 900px;
+    margin: 4rem auto 0;
+    position: relative;
+}
+
+.processo-timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    bottom: 30px;
+    width: 2px;
+    background: var(--color-border);
+}
+
+.processo-step {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.processo-step:last-child {
+    margin-bottom: 0;
+}
+
+.processo-step__number {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background: var(--color-secondary);
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.processo-step__content {
+    flex: 1;
+    padding-top: 0.5rem;
+}
+
+.processo-step__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}
+
+.processo-step__text {
+    color: var(--color-text-light);
+    line-height: 1.7;
+}
+
+/* ========================================
+   4. RECURSOS
+   ======================================== */
+
+.recursos {
+    padding: 6rem 0;
+}
+
+.recursos__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.recurso-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+}
+
+.recurso-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.recurso-card__icon {
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.recurso-card__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}
+
+.recurso-card__description {
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.recurso-card__meta {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    font-weight: 600;
+}
+
+.recurso-card__download {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.recurso-card__download:hover {
+    background: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+.recurso-card__download svg {
+    transition: transform var(--transition-normal);
+}
+
+.recurso-card__download:hover svg {
+    transform: translateY(2px);
+}
+
+/* ========================================
+   5. CASES
+   ======================================== */
+
+.cases {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0d3742 100%);
+    padding: 6rem 0;
+}
+
+.cases__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+
+.case-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition-normal);
+}
+
+.case-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+.case-card__image {
+    position: relative;
+    padding-bottom: 66.67%; /* 3:2 aspect ratio */
+    overflow: hidden;
+    background: var(--color-bg-light);
+}
+
+.case-card__image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.case-card:hover .case-card__image img {
+    transform: scale(1.05);
+}
+
+.case-card__content {
+    padding: 2rem;
+}
+
+.case-card__title {
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.case-card__architect {
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.case-card__text {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.case-card__specs {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+}
+
+/* ========================================
+   6. FORM PARCERIA
+   ======================================== */
+
+.form-parceria {
+    padding: 6rem 0;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: var(--color-white);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.checkbox-group label:hover {
+    border-color: var(--color-secondary);
+    background: rgba(255, 107, 53, 0.05);
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+    cursor: pointer;
+    accent-color: var(--color-secondary);
+}
+
+.checkbox-group input[type="checkbox"]:checked + span {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* ========================================
+   7. RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablets (até 1024px) */
+@media (max-width: 1024px) {
+    .arquitetos-hero__title {
+        font-size: 2.5rem;
+    }
+
+    .arquitetos-hero__subtitle {
+        font-size: 1.25rem;
+    }
+
+    .beneficios__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .recursos__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cases__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile (até 768px) */
+@media (max-width: 768px) {
+    .arquitetos-hero {
+        min-height: 60vh;
+    }
+
+    .arquitetos-hero__title {
+        font-size: 2rem;
+    }
+
+    .arquitetos-hero__subtitle {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+    }
+
+    .arquitetos-hero__cta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .arquitetos-hero__cta .btn {
+        width: 100%;
+    }
+
+    .beneficios,
+    .processo,
+    .recursos,
+    .cases,
+    .form-parceria {
+        padding: 4rem 0;
+    }
+
+    .beneficios__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .processo-timeline::before {
+        left: 22px;
+    }
+
+    .processo-step {
+        gap: 1.5rem;
+    }
+
+    .processo-step__number {
+        width: 45px;
+        height: 45px;
+        font-size: 1.25rem;
+    }
+
+    .processo-step__title {
+        font-size: 1.25rem;
+    }
+
+    .recursos__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .case-card__content {
+        padding: 1.5rem;
+    }
+
+    .case-card__specs {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Small mobile (até 480px) */
+@media (max-width: 480px) {
+    .arquitetos-hero__title {
+        font-size: 1.5rem;
+    }
+
+    .arquitetos-hero__subtitle {
+        font-size: 1rem;
+    }
+
+    .arquitetos-hero__badge {
+        font-size: 0.75rem;
+        padding: 0.375rem 1rem;
+    }
+
+    .beneficio-card {
+        padding: 1.5rem;
+    }
+
+    .beneficio-card__title {
+        font-size: 1.125rem;
+    }
+
+    .processo-step__title {
+        font-size: 1.125rem;
+    }
+
+    .recurso-card {
+        padding: 1.5rem;
+    }
+
+    .case-card__title {
+        font-size: 1.125rem;
+    }
+}
+
+/* ========================================
+   8. ANIMATIONS
+   ======================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger animation for beneficio cards */
+.beneficio-card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.beneficio-card:nth-child(1) { animation-delay: 0.1s; }
+.beneficio-card:nth-child(2) { animation-delay: 0.2s; }
+.beneficio-card:nth-child(3) { animation-delay: 0.3s; }
+.beneficio-card:nth-child(4) { animation-delay: 0.4s; }
+.beneficio-card:nth-child(5) { animation-delay: 0.5s; }
+.beneficio-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Processo steps animation */
+.processo-step {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.processo-step:nth-child(1) { animation-delay: 0.1s; }
+.processo-step:nth-child(2) { animation-delay: 0.2s; }
+.processo-step:nth-child(3) { animation-delay: 0.3s; }
+.processo-step:nth-child(4) { animation-delay: 0.4s; }
+.processo-step:nth-child(5) { animation-delay: 0.5s; }
+
+/* ========================================
+   9. PRINT STYLES
+   ======================================== */
+
+@media print {
+    .arquitetos-hero {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+
+    .arquitetos-hero__badge,
+    .arquitetos-hero__cta {
+        display: none;
+    }
+
+    .beneficios__grid,
+    .recursos__grid,
+    .cases__grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .processo-timeline::before {
+        display: none;
+    }
+
+    .recurso-card__download,
+    .whatsapp-float {
+        display: none;
+    }
+
+    .beneficio-card,
+    .case-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid var(--color-border);
+    }
+}
+
+/* ========================================
+   10. ACCESSIBILITY
+   ======================================== */
+
+/* Focus styles */
+.recurso-card__download:focus {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+.checkbox-group input[type="checkbox"]:focus {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .arquitetos-hero::before {
+        animation: none;
+    }
+
+    .beneficio-card,
+    .processo-step,
+    .case-card img,
+    .recurso-card {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .beneficio-card,
+    .processo-step {
+        opacity: 1;
+    }
+
+    .beneficio-card:hover,
+    .case-card:hover,
+    .recurso-card:hover {
+        transform: none;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .beneficio-card,
+    .recurso-card,
+    .case-card {
+        border: 2px solid var(--color-primary);
+    }
+
+    .processo-step__number {
+        border: 3px solid var(--color-white);
+    }
+
+    .checkbox-group label {
+        border-width: 3px;
+    }
+}
+
+/* ========================================
+   11. DOWNLOAD MODAL (OVERLAY)
+   ======================================== */
+
+.download-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-normal);
+}
+
+.download-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.download-modal__content {
+    background: var(--color-white);
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform var(--transition-normal);
+}
+
+.download-modal.active .download-modal__content {
+    transform: scale(1);
+}
+
+.download-modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--color-text-light);
+    transition: color var(--transition-normal);
+}
+
+.download-modal__close:hover {
+    color: var(--color-secondary);
+}
+
+.download-modal__icon {
+    color: var(--color-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.download-modal__title {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.download-modal__text {
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.download-modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.download-modal__form input {
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    transition: border-color var(--transition-normal);
+}
+
+.download-modal__form input:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+}
+
+.download-modal__form .btn {
+    width: 100%;
+}

@@ -1,0 +1,26 @@
+# Robots.txt - Toldo Vela
+# https://toldovela.com.br/robots.txt
+
+User-agent: *
+Allow: /
+
+# Páginas principais
+Allow: /metodo-toldo-vela
+Allow: /materiais-tecnologia
+Allow: /portfolio
+Allow: /para-arquitetos
+Allow: /sobre
+Allow: /contato
+
+# Assets
+Allow: /assets/
+Allow: /styles/
+Allow: /scripts/
+
+# Páginas que não devem ser indexadas
+Disallow: /api/
+Disallow: /obrigado
+Disallow: /config/
+
+# Sitemap
+Sitemap: https://toldovela.com.br/sitemap.xml

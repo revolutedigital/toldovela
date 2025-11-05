@@ -1,0 +1,753 @@
+/* ========================================
+   CONTATO & OBRIGADO PAGE STYLES
+   ======================================== */
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+.contato-hero {
+    padding: 8rem 0 6rem;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.contato-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/assets/images/patterns/grid.svg') center/cover;
+    opacity: 0.05;
+}
+
+.contato-hero__content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contato-hero__title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.8s ease;
+}
+
+.contato-hero__subtitle {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    line-height: 1.6;
+    animation: fadeInUp 0.8s ease 0.2s backwards;
+}
+
+/* ========================================
+   CONTATO INFO GRID
+   ======================================== */
+.contato-info {
+    padding: 6rem 0 4rem;
+    background: var(--color-background-light);
+}
+
+.contato-info__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.contato-item {
+    background: var(--color-white);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease backwards;
+}
+
+.contato-item:nth-child(1) { animation-delay: 0.1s; }
+.contato-item:nth-child(2) { animation-delay: 0.2s; }
+.contato-item:nth-child(3) { animation-delay: 0.3s; }
+.contato-item:nth-child(4) { animation-delay: 0.4s; }
+
+.contato-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.contato-item__icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contato-item__icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: var(--color-white);
+}
+
+.contato-item__content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: 0.75rem;
+}
+
+.contato-item__content p {
+    margin-bottom: 0.5rem;
+}
+
+.contato-item__content a {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 1.125rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contato-item__content a:hover {
+    color: var(--color-secondary);
+}
+
+.contato-item__content span {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    margin-top: 0.5rem;
+}
+
+/* ========================================
+   SOCIAL LINKS
+   ======================================== */
+.contato-social {
+    text-align: center;
+    padding: 2rem 0 4rem;
+}
+
+.contato-social h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.contato-social__links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.contato-social__link {
+    width: 50px;
+    height: 50px;
+    background: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.contato-social__link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.contato-social__link--instagram:hover {
+    background: linear-gradient(135deg, #833AB4, #E1306C, #F77737);
+}
+
+.contato-social__link--facebook:hover {
+    background: #1877F2;
+}
+
+.contato-social__link--linkedin:hover {
+    background: #0A66C2;
+}
+
+.contato-social__link svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--color-text-dark);
+    transition: fill 0.3s ease;
+}
+
+.contato-social__link:hover svg {
+    fill: var(--color-white);
+}
+
+/* ========================================
+   FORM SECTION
+   ======================================== */
+.contato-form-section {
+    padding: 6rem 0;
+    background: var(--color-white);
+}
+
+.contato-form-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contato-form-wrapper h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.contato-form-wrapper > p {
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 1.125rem;
+    margin-bottom: 3rem;
+}
+
+.contato-form {
+    background: var(--color-background-light);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.form-group label .required {
+    color: var(--color-accent);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    transition: all 0.3s ease;
+    background: var(--color-white);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23374151' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 20px;
+    padding-right: 3rem;
+}
+
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+    border-color: var(--color-accent);
+}
+
+.form-group .error-message {
+    display: none;
+    color: var(--color-accent);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.form-group.error .error-message {
+    display: block;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.form-actions .btn {
+    min-width: 200px;
+}
+
+.form-loading {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+}
+
+.form-loading.active {
+    display: block;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ========================================
+   MAP SECTION
+   ======================================== */
+.contato-mapa {
+    padding: 6rem 0;
+    background: var(--color-background-light);
+}
+
+.contato-mapa h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.contato-mapa__wrapper {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    height: 450px;
+    background: var(--color-white);
+    position: relative;
+}
+
+.contato-mapa__wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.contato-mapa__placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--color-white);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* ========================================
+   OBRIGADO PAGE
+   ======================================== */
+.obrigado-section {
+    padding: 8rem 0 6rem;
+    background: var(--color-background-light);
+    min-height: 80vh;
+}
+
+.obrigado-content {
+    text-align: center;
+    background: var(--color-white);
+    padding: 4rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.6s ease;
+}
+
+.obrigado-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 2rem;
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: scaleIn 0.6s ease 0.2s backwards;
+}
+
+.obrigado-icon svg {
+    stroke: var(--color-white);
+    stroke-width: 3;
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.obrigado-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.6s ease 0.3s backwards;
+}
+
+.obrigado-text {
+    font-size: 1.125rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 0.6s ease 0.4s backwards;
+}
+
+.obrigado-info {
+    background: var(--color-background-light);
+    padding: 2.5rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    text-align: left;
+    animation: fadeInUp 0.6s ease 0.5s backwards;
+}
+
+.obrigado-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.obrigado-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.obrigado-info li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    font-size: 1.05rem;
+    color: var(--color-text-dark);
+}
+
+.obrigado-info li:not(:last-child) {
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.obrigado-info li svg {
+    flex-shrink: 0;
+    stroke: #10b981;
+    stroke-width: 3;
+}
+
+.obrigado-urgente {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.6s ease 0.6s backwards;
+}
+
+.obrigado-urgente p {
+    color: var(--color-white);
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+}
+
+.obrigado-urgente .btn--secondary {
+    background: var(--color-white);
+    color: #d97706;
+    border-color: var(--color-white);
+}
+
+.obrigado-urgente .btn--secondary:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.obrigado-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.6s ease 0.7s backwards;
+}
+
+.obrigado-extra {
+    margin-top: 5rem;
+    animation: fadeInUp 0.6s ease 0.8s backwards;
+}
+
+.obrigado-extra h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.extra-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.extra-link {
+    background: var(--color-white);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.extra-link:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.extra-link svg {
+    stroke: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.extra-link h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.extra-link p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+/* Tablet (1024px) */
+@media (max-width: 1024px) {
+    .contato-hero__title {
+        font-size: 2.5rem;
+    }
+
+    .contato-mapa__wrapper {
+        height: 400px;
+    }
+}
+
+/* Tablet Portrait (768px) */
+@media (max-width: 768px) {
+    .contato-hero {
+        padding: 6rem 0 4rem;
+    }
+
+    .contato-hero__title {
+        font-size: 2rem;
+    }
+
+    .contato-hero__subtitle {
+        font-size: 1.125rem;
+    }
+
+    .contato-info {
+        padding: 4rem 0 3rem;
+    }
+
+    .contato-info__grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .contato-form-section {
+        padding: 4rem 0;
+    }
+
+    .contato-form-wrapper h2,
+    .obrigado-extra h2 {
+        font-size: 2rem;
+    }
+
+    .contato-form {
+        padding: 2rem 1.5rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .contato-mapa {
+        padding: 4rem 0;
+    }
+
+    .contato-mapa__wrapper {
+        height: 350px;
+    }
+
+    .obrigado-section {
+        padding: 6rem 0 4rem;
+    }
+
+    .obrigado-content {
+        padding: 3rem 2rem;
+    }
+
+    .obrigado-title {
+        font-size: 2rem;
+    }
+
+    .obrigado-info {
+        padding: 2rem 1.5rem;
+    }
+
+    .extra-links {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile (480px) */
+@media (max-width: 480px) {
+    .contato-hero {
+        padding: 5rem 0 3rem;
+    }
+
+    .contato-hero__title {
+        font-size: 1.75rem;
+    }
+
+    .contato-hero__subtitle {
+        font-size: 1rem;
+    }
+
+    .contato-item {
+        padding: 2rem 1.5rem;
+    }
+
+    .contato-form {
+        padding: 1.5rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.875rem 1rem;
+    }
+
+    .form-actions .btn {
+        min-width: 100%;
+    }
+
+    .contato-mapa__wrapper {
+        height: 300px;
+    }
+
+    .obrigado-content {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .obrigado-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .obrigado-icon svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    .obrigado-title {
+        font-size: 1.5rem;
+    }
+
+    .obrigado-text {
+        font-size: 1rem;
+    }
+
+    .obrigado-info {
+        padding: 1.5rem;
+    }
+
+    .obrigado-info li {
+        font-size: 0.95rem;
+    }
+
+    .obrigado-urgente {
+        padding: 1.5rem;
+    }
+
+    .obrigado-actions {
+        flex-direction: column;
+    }
+
+    .obrigado-actions .btn {
+        width: 100%;
+    }
+}
+
+/* Small Mobile (320px) */
+@media (max-width: 320px) {
+    .contato-hero__title {
+        font-size: 1.5rem;
+    }
+
+    .contato-item__icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .obrigado-icon {
+        width: 70px;
+        height: 70px;
+    }
+}
